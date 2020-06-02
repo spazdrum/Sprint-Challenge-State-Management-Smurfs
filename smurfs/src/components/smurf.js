@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import smurfCard from './smurefCard';
+import smurfCard from './smurfCard';
 import { fetchData } from '../actions/action';
 import { connect } from 'react-redux';
 
