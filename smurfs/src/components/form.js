@@ -31,11 +31,11 @@ const Form = (props) => {
     return (
         <div>
             <form>
-                <input name="name" type="text" onChange={handleChanges} />
+                <input name="name" type="text" placeholder="Name" onChange={handleChanges} />
                 <br></br>
-                <input name="age" type="text" onChange={handleChanges} />
+                <input name="age" type="text" placeholder="Age" onChange={handleChanges} />
                 <br></br>
-                <input name="height" type="text" onChange={handleChanges} />
+                <input name="height" type="text" placeholder="Height" onChange={handleChanges} />
                 <br></br>
                 <button type="submit" onClick={handleSubmit}>Submit</button>
                 <button type="submit" onClick={handleDelete}>Delete</button>
@@ -44,7 +44,7 @@ const Form = (props) => {
     )
 }
 
-const maptStateToProps = state => {
+const mapStateToProps = state => {
     return {
         name: state.name,
         age: state.age,
@@ -52,4 +52,4 @@ const maptStateToProps = state => {
     }
 }
 
-export default connect(maptStateToProps, {addSmurf, fetchData})(Form);
+export default connect(mapStateToProps, {addSmurf, fetchData})(Form);
