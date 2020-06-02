@@ -17,10 +17,13 @@ export const fetchData = () => dispatch => {
 };
 
 export const addSmurf = (smurf) => dispatch => {
+    dispatch({ type: ADD_SMURF });
     axios
         .post('http://localhost:3333/smurfs', smurf)
         .then(res => {
             dispatch({ type: ADD_SMURF_SUCCESS, payload: res })
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            dispatch({ type: ADD_SMURF_FAIL, payload: err })
+        })
 };
