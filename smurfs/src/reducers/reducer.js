@@ -37,7 +37,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: ''
+                error: '',
+                smurfData: action.payload
             }
         default:
             return state;
