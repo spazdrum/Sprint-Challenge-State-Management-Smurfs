@@ -14,12 +14,13 @@ const Form = (props) => {
         height: ''
     })
 
-    const handleSubmit = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
         props.addSmurf(newSmurf)
     }
 
     const handleChanges = (e) => {
-        let name = e.target.value
+        let name = e.target.name
         setNewSmurf({ ...newSmurf, [name] : e.target.value })
     }
 
@@ -37,8 +38,8 @@ const Form = (props) => {
                 <br></br>
                 <input name="height" type="text" placeholder="Height" onChange={handleChanges} />
                 <br></br>
-                <button type="submit" onClick={handleSubmit}>Submit</button>
-                <button type="submit" onClick={handleDelete}>Delete</button>
+                <input type="submit" onClick={handleSubmit} value='submit'/>
+                <button onClick={handleDelete}>Delete</button>
             </form>
         </div>
     )

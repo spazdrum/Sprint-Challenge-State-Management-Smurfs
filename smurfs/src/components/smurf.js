@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import smurfCard from './smurfCard';
+import SmurfCard from './smurfCard';
 import { fetchData } from '../actions/action';
 import { connect } from 'react-redux';
 
@@ -18,7 +18,7 @@ const Smurf = props => {
         <div>
             {props.err && <p>{ props.err }</p>}
             {props.smurfData.map(data => (
-                <smurfCard key={data.id} data={data} />
+                <SmurfCard key={data.id} data={data} />
             ))}
         </div>
     )
